@@ -1,5 +1,6 @@
 package com.arkumbra.ds.heap;
 
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
@@ -80,7 +81,6 @@ public class MedianHeap implements Heap<Integer> {
   private void fixOrdering() {
     int maxSize = max.size();
     int minSize = min.size();
-
     if (Math.abs(maxSize - minSize) > 1) {
       if (maxSize > minSize) {
         min.add(max.poll());
@@ -91,4 +91,12 @@ public class MedianHeap implements Heap<Integer> {
   }
 
 
+}
+
+class MyComp implements Comparator<Integer> {
+
+  @Override
+  public int compare(Integer o1, Integer o2) {
+    return 0;
+  }
 }
